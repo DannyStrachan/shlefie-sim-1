@@ -1,0 +1,18 @@
+.header{
+    background: #ab2a19;
+    height: 80px;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 50px;
+    margin-left: 50px;
+  }
+
+  .header h1{
+    margin-left: 13px;
+    font-weight: 700;
+    font-size: 28px;
+    color: white;
+  }

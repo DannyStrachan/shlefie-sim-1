@@ -1,0 +1,26 @@
+.product {
+  height: 160px;
+  width: 300px;
+  
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.product-container {
+  height: 100%;
+  width: 460px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 8px;
+  margin: 0px 60px 60px 60px;
+  background-color: rgb(179, 37, 37);
+  padding: 16px;
+}
+
+.product-image img{
+    background: grey;
+    border-radius: 3px;
+    width: 300px;
+    height: 200px;
+  }

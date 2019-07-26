@@ -1,0 +1,21 @@
+.form-container{
+    margin: 0px 200px 0 0;
+    background: #3ad886;
+    height: 480px;
+    width: 450px;
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+.form-image{
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-image img{
+    background: grey;
+    border-radius: 3px;
+    width: 300px;
+    height: 200px;
+  }
