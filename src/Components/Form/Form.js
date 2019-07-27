@@ -41,13 +41,14 @@ export default class Form extends Component{
     axios.post('http://localhost:4200/api/inventory', {"name": name, "price": price, "image": imgUrl})
       .then(() => this.props.getInventory())
       .catch(() => console.log("could not add product"))
+      this.props.getInventory()
 
     console.log("added")
   };
 
   updateProduct = () => {
     let { imgUrl, name, price, currentId } = this.state;
-    axios.put(`http://localhost:4200/api/inventory/${currentId}`, {"name": name, "price": price, "image": imgUrl})
+    axios.put(`/api/inventory/${currentId}`, {"name": name, "price": price, "image": imgUrl})
       .then(() => this.props.getInventory())
       .catch(() => console.log("could not add product"))
   }
@@ -79,18 +80,19 @@ export default class Form extends Component{
   }
 
   render(){
+    console.log(this.state);
     return(
       <div className="form-container">
         <div className="form-image">
           <img alt="" src={this.state.imgUrl} />
         </div>
         <form action="" className="form">
-          <p>Image Url:</p>
-          <input type="text" value={this.state.imgUrl} onChange={e => this.imgUrlHandler(e.target.value)} />
-          <p>Product Name:</p>
-          <input type="text" value={this.state.name} onChange={e => this.nameHandler(e.target.value)} />
-          <p>Price:</p>
-          <input type="number" value={this.state.price} onChange={e => this.priceHandler(e.target.value)} />
+        <p>Image URL:</p>
+                    <input type="text" value={this.state.imgUrl} onChange={(e) => this.imgUrlHandler(e.target.value)}/>
+                    <p>Product Name:</p>
+                    <input type="text" value={this.state.name} onChange={(e) => this.nameHandler(e.target.value)}/>
+                    <p>Price:</p>
+                    <input type="number" value={this.state.price} onChange={(e) => this.priceHandler(e.target.value)}/>
           <div className="form-buttons">
             <button onClick={() => this.cancelHandler()}>Cancel</button>
             {

@@ -4,7 +4,7 @@ import Header from './Components/Header/Header';
 import Form from './Components/Form/Form';
 import axios from 'axios';
 import './App.css';
-import {HashRouter as Router} from 'react-router-dom';
+// import {HashRouter as Router} from 'react-router-dom';
 
 class App extends Component {
   constructor(){
@@ -33,13 +33,13 @@ class App extends Component {
     console.log(this.state);
     return (
       <div className="App">
-        <Router>
+        {/* <Router> */}
         <Header />
         <div className="content">
           <Dashboard updateCurrentId={this.updateCurrentId} inventory={this.state.inventory} getInventory={this.getInventory}/>
           <Form inventory={this.state.inventory} getInventory={this.getInventory} currentId={this.state.currentId}/>
         </div>
-        </Router>
+        {/* </Router> */}
       </div>
     );
   }

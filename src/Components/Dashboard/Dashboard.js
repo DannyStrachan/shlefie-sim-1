@@ -5,7 +5,7 @@ import "./Dashboard.css";
 
 export default class Dashboard extends Component{
   deleteProduct = (id) => {
-    axios.delete(`http://localhost:4200/api/inventory/${id}`).then(() => {
+    axios.delete(`/api/inventory/${id}`).then(() => {
         this.props.getInventory()
       })
       .catch(() => console.log("could not delete product"))
