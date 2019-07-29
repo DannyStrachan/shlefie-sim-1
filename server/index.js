@@ -12,7 +12,8 @@ app.use(cors())
 massive(CONNECTION_STRING).then((database) => {
     app.set('db', database)
     console.log('database set')
-    app.listen(SERVER_PORT, () => console.log(`Cruising on port ${SERVER_PORT}!!!!`))
+    app.listen(SERVER_PORT, () => console.log(`Cruising on port ${SERVER_PORT}`))
+    
 })
 
 app.get('/api/inventory', ctrl.getInventory)

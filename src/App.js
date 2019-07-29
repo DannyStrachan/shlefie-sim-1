@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Header from './Components/Header/Header';
-import Form from './Components/Form/Form';
-import axios from 'axios';
+import axios from 'axios'
 import './App.css';
-// import {HashRouter as Router} from 'react-router-dom';
+import Header from './/Components/Header/Header';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Form from './Components/Form/Form';
+import {HashRouter} from 'react-router-dom';
 
 class App extends Component {
   constructor(){
@@ -18,7 +18,9 @@ class App extends Component {
     axios.get('http://localhost:4200/api/inventory').then(res => {
       this.setState({
         inventory: res.data
+        
       })
+      
     })
   }
   updateCurrentId = (currentId) =>{
@@ -30,23 +32,22 @@ class App extends Component {
     this.getInventory()
   }
   render(){
-    console.log(this.state);
     return (
       <div className="App">
-        {/* <Router> */}
+        <HashRouter>
         <Header />
         <div className="content">
           <Dashboard updateCurrentId={this.updateCurrentId} inventory={this.state.inventory} getInventory={this.getInventory}/>
           <Form inventory={this.state.inventory} getInventory={this.getInventory} currentId={this.state.currentId}/>
         </div>
-        {/* </Router> */}
+        </HashRouter>
+  
       </div>
     );
   }
 }
 
 export default App;
-
 
 // {
 //   imgUrl:
